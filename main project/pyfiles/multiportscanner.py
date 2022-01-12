@@ -42,6 +42,7 @@ def main():
 	keyboard = Controller()
 	keyboard.press(Key.enter)
 	keyboard.release(Key.enter)
+	print(" ")
 	menu()
 
 def menu():
@@ -64,7 +65,8 @@ def menu():
 		os.system("clear")
 		menu()
 
-#if __name__ == '__main__':
-#	main()
-main()
-menu()
+if __name__ == '__main__':
+	main()
+	menu()
+#main()
+#menu()
