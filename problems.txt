@@ -1,0 +1,12 @@
+
+PROBLEM 1:
+In scanners.py, with option 9, imported function not working, it's execute full program
+Expected result: Run only execute() funtion imported from omnitrix.py
+Status: Not Solved
+
+In ssh bruteforcer, it is unable to run the program and unable to read and bruteforce using wordlists.
+
+
+----------PROBLEM : - Problem solved-----------------
+In multiportscanner.py, main() function is not working. 
+Status: Solved
