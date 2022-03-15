@@ -1,37 +1,29 @@
 #!/usr/bin/python3
 
-from termcolor import colored
+from urllib.request import urlopen
 import hashlib
+from termcolor import colored
 import os
-from pynput.keyboard import Key, Controller
 
-def tryOpen(wordlist):
-	global pass_file
-	try:
-		pass_file = open(wordlist, "r")
-	except:
-		print("[-] No Such File At That Path!")
+sha1hash = input(colored("|> Enter MD5 Hash Value: ",'yellow',attrs=["bold"]))
 
+#passlist = str(urlopen("https://raw.githubusercontent.com/dreamer1eh/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-10000.txt").read(), 'utf-8')
 
-pass_hash = input(colored("|> Enter MD5 Hash Value: ",'yellow',attrs=['bold']))
-wordlist = input(colored("|> Enter Path To The Password File: ",'green',attrs=['bold']))
-tryOpen(wordlist)
+passlist = str(urlopen("https://raw.githubusercontent.com/dreamer1eh/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt").read(), 'utf-8')
 
 def main():
-	for word in pass_file:
-		print(colored("[*] Trying: "+word.strip("\n"),'blue'))
-		enc_wrd = word.encode('utf-8')
-		md5digest = hashlib.md5(enc_wrd.strip()).hexdigest()
-
-		if md5digest == pass_hash:
-			print(colored("[+] Password Found: "+word,'green',attrs=["bold"]))
-			#exit(0)
+	for password in passlist.split('\n'):
+		hashguess = hashlib.md5(bytes(password, 'utf-8')).hexdigest()
+		if hashguess == sha1hash:
+			print(colored("[+] The password is: "+str(password),'green',attrs=["bold"]))
+			#quit()
 			break
-	keyboard = Controller()
-	keyboard.press(Key.enter)
-	keyboard.release(Key.enter)
+			menu()
+		else:
+			print(colored("[-] Password guess: "+str(password)+" does not match, trying next . . .","red",attrs=["bold"]))
+			
+	print(colored("\n[!] If You Didn\'t Get The Password, Then Password Is Not In The Password List [!]",'cyan',attrs=["blink"]))
 	menu()
-	print("[!!] Password Not In List!")
 
 def menu():
 	option = int(input(colored("\n\nDo you want to:\n[1] Use It Again\n[2] Go Back\n[3] Main Menu\n[4] Exit\n\n>>>Select Your Choice: ",'yellow', attrs=['bold'])))

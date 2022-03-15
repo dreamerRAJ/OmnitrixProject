@@ -16,19 +16,20 @@ def main():
 		hashguess = hashlib.sha1(bytes(password, 'utf-8')).hexdigest()
 		if hashguess == sha1hash:
 			print(colored("[+] The password is: "+str(password),'green',attrs=["bold"]))
-			menu()
 			#quit()
+			break
+			menu()
 		else:
 			print(colored("[-] Password guess: "+str(password)+" does not match, trying next . . .","red",attrs=["bold"]))
-
-	print("Password not in the passwordlist")
+			
+	print(colored("\n[!] If You Didn\'t Get The Password, Then Password Is Not In The Password List [!]",'cyan',attrs=["blink"]))
 	menu()
 
 def menu():
 	option = int(input(colored("\n\nDo you want to:\n[1] Use It Again\n[2] Hasher\n[3] Go Back\n[4] Main Menu\n[0] Exit\n\n>>>Select Your Choice: ",'yellow', attrs=['bold'])))
 	if option == 1:
 		os.system('python3 sha1hash.py && cd ..')
-		
+
 	elif option == 2:
 		os.system('python3 hasher.py && cd ..')
 

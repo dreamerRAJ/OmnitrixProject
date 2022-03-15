@@ -36,8 +36,8 @@ def main():
 			break
 		except:
 			print(colored("[-] Wrong Password X {}".format(password),"red"))
-	menu() 
-			
+	menu()
+
 def menu():
 	option = int(input(colored("\n\n=> Do you want to:\n[1] Bruteforce Again\n[2] Go Back\n[3] Main Menu\n[4] Exit\n\n>>>Select Your Choice: ",'yellow',attrs=["bold"])))
 	if option == 1:

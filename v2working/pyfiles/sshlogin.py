@@ -33,5 +33,5 @@ def menu():
 		print(colored("\n[!!!] Error! Select Correct Option","red"))
 		input(colored("|> Press Key To Continue . . .","green"))
 		menu()
-		
+
 menu()

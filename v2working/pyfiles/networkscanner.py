@@ -9,7 +9,7 @@ def execute():
 	os.system('echo "           ╔───────────────────────────────────────────────╗" | lolcat -a -d 1')
 	os.system('echo "           |           Created By: Rajnish Kumar           |" | lolcat -a -d 1')
 	os.system('echo "           ┖───────────────────────────────────────────────┙\n" | lolcat -a -d 1')
-	os.system('echo "[1] SINGLE PORT SCANNER \n[2] MULTIPLE PORT SCANNER\n[3] AUTO PORT SCANNER\n[4] SERVICE SCANNER\n[5] NETWORK VULNERABILITY SCANNER\n\n[9] MAIN MENU\n[0] EXIT" |lolcat -a -d 1 -F 0.3')
+	os.system('echo "[1] SINGLE PORT SCANNER \n[2] MULTIPLE PORT SCANNER\n[3] AUTO PORT SCANNER\n[4] SERVICE SCANNER\n[5] NETWORK VULNERABILITY SCANNER\n[6] NMAP INTENSE IP LIST SCANNER WITH OUTPUT\n\n[9] MAIN MENU\n[0] EXIT" |lolcat -a -d 1 -F 0.3')
 
 	option = int(input(colored("\n|> Select Your Option: ",'yellow',attrs=['bold'])))
 	if option == 1:
@@ -26,6 +26,9 @@ def execute():
 
 	elif option == 5:
 		os.system('python3 vulnscan.py vulnbanner.txt && cd ..')
+		
+	elif option == 6:
+		os.system("./list_scanner.sh | lolcat -F 0.3 && cd ..")
 
 	elif option == 9:
 		os.system("cd .. && python3 omnitrix.py")
