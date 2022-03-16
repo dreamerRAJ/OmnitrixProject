@@ -14,23 +14,26 @@ def execute():
 	os.system('echo "       |            Created By: Rajnish Kumar          |" | lolcat -a -d 1 -F 0.2')
 	os.system('echo "       ┖───────────────────────────────────────────────┙" | lolcat -a -d 1 -F 0.2')
 
-	os.system('echo "\n[1] NETWORK SCANNER \n[2] SSH LOGIN \n[3] FTP LOGIN\n[4] HASH CRACKER\n[5] NETWORK ANALYZER\n\n[0] EXIT" |lolcat -a -d 1 -F 0.5')
+	os.system('echo "\n[1] INFORMATION GATHERING\n[2] NETWORK SCANNER\n[3] SSH LOGIN\n[4] FTP LOGIN\n[5] HASH CRACKER\n[6] NETWORK ANALYZER\n\n[0] EXIT" |lolcat -a -d 1 -F 0.5')
 
 
 	option = int(input(colored("\n|> Select Your Option: ",'yellow',attrs=['bold'])))
 	if option == 1:
+		os.system('cd pyfiles && python3 ig.py && cd ..')
+	
+	elif option == 2:
 		os.system('cd pyfiles && python3 networkscanner.py && cd ..')
 
-	elif option == 2:
+	elif option == 3:
 		os.system('cd pyfiles && python3 loginwithssh.py && cd ..')
 
-	elif option == 3:
+	elif option == 4:
 		os.system('cd pyfiles && python3 ftpscript.py && cd ..')
 
-	elif option == 4:
+	elif option == 5:
 		os.system('cd pyfiles && python3 hashscript.py && cd ..')
 
-	elif option == 5:
+	elif option == 6:
 		os.system("cd pyfiles && python3 packet_new_terminal.py && cd ..")
 
 		#os.system('echo "[~] Work in Progress . . ."|lolcat -a -d 1 -F 0.7')
