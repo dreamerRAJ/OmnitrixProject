@@ -1,50 +1,45 @@
 #!/usr/bin/python3
 
-from termcolor import colored
+from urllib.request import urlopen
 import hashlib
+from termcolor import colored
 import os
-from pynput.keyboard import Key, Controller
 
-def tryOpen(wordlist):
-	global pass_file
-	try:
-		pass_file = open(wordlist, "r")
-	except:
-		print("[-] No Such File At That Path!")
+md5hash = input(colored("|> Enter MD5 Hash Value: ",'yellow',attrs=["bold"]))
 
+#passlist = str(urlopen("https://raw.githubusercontent.com/dreamer1eh/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-10000.txt").read(), 'utf-8')
 
-pass_hash = input(colored("|> Enter MD5 Hash Value: ",'yellow',attrs=['bold']))
-wordlist = input(colored("|> Enter Path To The Password File: ",'green',attrs=['bold']))
-tryOpen(wordlist)
+passlist = str(urlopen("https://raw.githubusercontent.com/dreamer1eh/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt").read(), 'utf-8')
 
 def main():
-	for word in pass_file:
-		print(colored("[*] Trying: "+word.strip("\n"),'blue'))
-		enc_wrd = word.encode('utf-8')
-		md5digest = hashlib.md5(enc_wrd.strip()).hexdigest()
-
-		if md5digest == pass_hash:
-			print(colored("[+] Password Found: "+word,'green',attrs=["bold"]))
-			#exit(0)
+	for password in passlist.split('\n'):
+		hashguess = hashlib.md5(bytes(password, 'utf-8')).hexdigest()
+		if hashguess == md5hash:
+			print(colored("[+] The password is: "+str(password),'green',attrs=["bold"]))
+			#quit()
 			break
-	keyboard = Controller()
-	keyboard.press(Key.enter)
-	keyboard.release(Key.enter)
+			menu()
+		else:
+			print(colored("[-] Password guess: "+str(password)+" does not match, trying next . . .","red",attrs=["bold"]))
+			
+	print(colored("\n[!] If You Didn\'t Get The Password, Then Password Is Not In The Password List [!]",'cyan',attrs=["blink"]))
 	menu()
-	print("[!!] Password Not In List!")
 
 def menu():
-	option = int(input(colored("\n\nDo you want to:\n[1] Use It Again\n[2] Go Back\n[3] Main Menu\n[4] Exit\n\n>>>Select Your Choice: ",'yellow', attrs=['bold'])))
+	option = int(input(colored("\n\nDo you want to:\n[1] Use It Again\n[2] Hasher\n[3] Go Back\n[4] Main Menu\n[0] Exit\n\n>>>Select Your Choice: ",'yellow', attrs=['bold'])))
 	if option == 1:
 		os.system('python3 md5brute.py && cd ..')
 
 	elif option == 2:
-		os.system('python3 hashscript.py && cd ..')
+		os.system('python3 hasher.py && cd ..')
 
 	elif option == 3:
-		os.system('cd .. && python3 omnitrix.py')
+		os.system('python3 hashscript.py && cd ..')
 
 	elif option == 4:
+		os.system('cd .. && python3 omnitrix.py')
+
+	elif option == 0:
 		os.system('echo "Good Bye! Have A Great Day . . ."|lolcat -a -i -d 50 -F 0.5')
 		exit()
 	else:

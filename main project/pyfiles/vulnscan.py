@@ -19,7 +19,7 @@ def checkVulns(banner, filename):
 	f = open(filename, "r")
 	for line in f.readlines():
 		if line.strip("\n") is banner:
-			print("[+] Server is vulnerable: {}" .format(banner.strip("\n")))
+			print("[+] Server is vulnerable: {}".format(banner.strip("\n")))
 
 def main():
 	if len(sys.argv) == 2:
@@ -34,7 +34,7 @@ def main():
 		print("[-] Usage: {} <vuln filename>".format(str(sys.argv[0])))
 		exit(0)
 	portlist = [21,22,23,25,53,80,111,135,139,443,445,512,513,514,1524]
-	for x in range(1,6):
+	for x in range(1,9):
 		ip = "192.168.0.10" + str(x)
 		for port in portlist:
 			banner = retBanner(ip,port)

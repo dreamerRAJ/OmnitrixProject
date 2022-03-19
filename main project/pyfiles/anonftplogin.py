@@ -17,7 +17,6 @@ def anonlogin(hostname):
 	except(Exception, e):
 		print(colored("[-] {} FTP Anonymous Login Not Allowed".format(hostname),'on_red'))
 
-
 def execute():
 	os.system("clear")
 	os.system("figlet -f Digital 'FTP ANONYMOUS LOGIN CHECK'|lolcat -a -d 1")

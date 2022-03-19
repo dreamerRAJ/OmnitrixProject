@@ -26,17 +26,20 @@ def main():
 	menu()
 
 def menu():
-	option = int(input(colored("\n\nDo you want to:\n[1] Use It Again\n[2] Go Back\n[3] Main Menu\n[4] Exit\n\n>>>Select Your Choice: ",'yellow', attrs=['bold'])))
+	option = int(input(colored("\n\nDo you want to:\n[1] Use It Again\n[2] Hasher\n[3] Go Back\n[4] Main Menu\n[0] Exit\n\n>>>Select Your Choice: ",'yellow', attrs=['bold'])))
 	if option == 1:
 		os.system('python3 md5brute.py && cd ..')
 
 	elif option == 2:
-		os.system('python3 hashscript.py && cd ..')
+		os.system('python3 hasher.py && cd ..')
 
 	elif option == 3:
-		os.system('cd .. && python3 omnitrix.py')
+		os.system('python3 hashscript.py && cd ..')
 
 	elif option == 4:
+		os.system('cd .. && python3 omnitrix.py')
+
+	elif option == 0:
 		os.system('echo "Good Bye! Have A Great Day . . ."|lolcat -a -i -d 50 -F 0.5')
 		exit()
 	else:

@@ -16,13 +16,12 @@ def main():
 		hashguess = hashlib.sha224(bytes(password, 'utf-8')).hexdigest()
 		if hashguess == sha1hash:
 			print(colored("[+] The password is: "+str(password),'green',attrs=["bold"]))
-			break
 			menu()
 			#quit()
 		else:
 			print(colored("[-] Password guess: "+str(password)+" does not match, trying next . . .","red",attrs=["bold"]))
 
-	print(colored("\n[!] If You Didn\'t Get The Password, Then Password Is Not In The Password List [!]",'cyan',attrs=["blink"]))
+	print("Password not in the passwordlist")
 	menu()
 
 def menu():

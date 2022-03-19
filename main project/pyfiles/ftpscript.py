@@ -19,7 +19,7 @@ def execute():
 		os.system('python3 ftpbrute.py && cd ..')
 
 	elif option == 3:
-		os.system('python3 ftplogin.py && cd ..')
+		os.system('python3 ftplogin.py | lolcat -F 0.3 && cd ..')
 
 	elif option == 9:
 		os.system("cd .. && python3 omnitrix.py")
