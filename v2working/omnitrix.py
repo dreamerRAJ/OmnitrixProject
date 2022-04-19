@@ -4,7 +4,7 @@ from termcolor import colored
 
 def banner():
 	os.system("figlet -f Poison 'OMNITRIX'|lolcat -a -d 2 -F 0.5")
-	os.system("figlet -f Digital '						COMBO OF PEN-TESTING TOOLS' | lolcat -a -d 1")
+	#os.system("figlet -f Digital '						COMBO OF PEN-TESTING TOOLS' | lolcat -a -d 1")
 	os.system("figlet -f threepoint ' Created By: Rajnish Kumar' | lolcat -a -d 1 -F 0.3")
 	execute()
 
