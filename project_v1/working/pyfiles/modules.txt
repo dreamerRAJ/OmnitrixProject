@@ -1,0 +1,14 @@
+socket  
+os  
+termcolor  
+threading  
+pynput   
+nmap   	
+sys  
+pexpect   
+ftplib  
+hashlib   
+urllib  
+struct   
+binascii
+subprocess   

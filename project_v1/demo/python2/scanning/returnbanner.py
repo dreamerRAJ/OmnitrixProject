@@ -1,0 +1,25 @@
+
+#!/usr/bin/python
+
+import socket
+
+def retBanner(ip,port):
+	try:
+		socket.setdefaulttimeout(3)
+		s = socket.socket()
+		s.connect((ip,port))
+		banner = s.recv(4096)
+		return banner
+	except:
+		return
+
+def main():
+	ip = raw_input("[*] Enter Target IP: ")
+	print "\n{#} Super Scanning is under progress...\n"
+	for port in range(1,65535):
+		banner = retBanner(ip,port)
+		if banner:
+			print "[+] " + ip + "/" + str(port) + " : " + banner.strip('\n')
+
+main()
+print "\n{=} Super Scanning Completed."

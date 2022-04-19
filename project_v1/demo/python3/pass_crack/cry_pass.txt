@@ -1,0 +1,9 @@
+
+admin:password
+admin:password123
+admin:admin
+root:toor
+root:password 
+root:ABqjjPC0Jmvs6
+root:VRpq1CV62oswo
+admin:root

@@ -1,0 +1,6 @@
+admin:administrator
+ADMIN:admin123
+root:password
+root:passw0rd
+msfadmin:msfadmin
+msfadmin:Pas5w0rd

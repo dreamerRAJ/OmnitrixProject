@@ -1,0 +1,11 @@
+password
+root
+admin
+football
+basketball
+admin1
+admin123
+rajnish
+ravnish
+msfadmin
+metasploit

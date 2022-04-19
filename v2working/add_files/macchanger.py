@@ -14,6 +14,7 @@ def change_mac_addr(interface,mac):
 	#subprocess.call(["ifconfig",interface,"up"])
 
 def main():
+	os.system("ifconfig")
 	interface = str(input("[*] Enter Network Interface To Change Mac Address On: "))
 	new_mac_addr = str(input("[*] Enter Mac Address To Change: "))
 
