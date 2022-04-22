@@ -10,3 +10,8 @@ In ssh bruteforcer, it is unable to run the program and unable to read and brute
 ----------PROBLEM : - Problem solved-----------------
 In multiportscanner.py, main() function is not working. 
 Status: Solved
+
+
+
+PROBLEM 2:
+MACCHAANGER.PY is unable to show "failed to change mac" even when it fails
