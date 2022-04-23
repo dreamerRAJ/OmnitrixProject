@@ -5,16 +5,16 @@ from termcolor import colored
 def banner():
 	os.system("figlet -f Poison 'OMNITRIX'|lolcat -a -d 2 -F 0.5")
 	#os.system("figlet -f Digital '						COMBO OF PEN-TESTING TOOLS' | lolcat -a -d 1")
-	os.system("figlet -f threepoint ' Created By: Rajnish Kumar' | lolcat -a -d 1 -F 0.3")
+#	os.system("figlet -f threepoint ' Created By: Rajnish Kumar' | lolcat -a -d 1 -F 0.3")
 	execute()
 
 def execute():
 	os.system('echo "       ╔───────────────────────────────────────────────╗" | lolcat -a -d 1 -F 0.2')
-	os.system('echo "       |      OMNITRIX - COMBO OF PEN-TESTING TOOLS    |" | lolcat -a -d 1 -F 0.2')
-	os.system('echo "       |            Created By: Rajnish Kumar          |" | lolcat -a -d 1 -F 0.2')
+	os.system('echo "       |      OMNITRIX - COMBO OF PEN-TESTING TOOLS    |" | lolcat -a -d 1 -F 0.5')
+	os.system('echo "       |           CREATED By \xa9 RAJNISH KUMAR          |" | lolcat -a -d 1 -F 0.5')
 	os.system('echo "       ┖───────────────────────────────────────────────┙" | lolcat -a -d 1 -F 0.2')
 
-	os.system('echo "\n[1] INFORMATION GATHERING\n[2] NETWORK SCANNER\n[3] SSH LOGIN\n[4] FTP LOGIN\n[5] HASH CRACKER\n[6] NETWORK ANALYZER\n\n[0] EXIT" |lolcat -a -d 1 -F 0.5')
+	os.system('echo "\n[1] INFORMATION GATHERING\n[2] NETWORK SCANNER\n[3] SSH LOGIN\n[4] FTP LOGIN\n[5] HASH CRACKER\n[6] NETWORK ANALYZER\n[7] SPOOFERS\n\n[0] EXIT" |lolcat -a -d 1 -F 0.5')
 
 
 	option = int(input(colored("\n|> Select Your Option: ",'yellow',attrs=['bold'])))
@@ -35,6 +35,10 @@ def execute():
 
 	elif option == 6:
 		os.system("cd pyfiles && python3 packet_new_terminal.py && cd ..")
+	
+	elif option == 7:
+		os.system("cd pyfiles && python3 spooferscript.py && cd ..")
+
 
 		#os.system('echo "[~] Work in Progress . . ."|lolcat -a -d 1 -F 0.7')
 		#input(colored("Press Any Key To Continue . . .",'red', attrs=['bold']))
