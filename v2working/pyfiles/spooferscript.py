@@ -9,7 +9,7 @@ def execute():
 	os.system('echo "\t  ╔───────────────────────────────────────────────╗" | lolcat -a -d 1')
 	os.system('echo "\t  |           Created By: Rajnish Kumar           |" | lolcat -a -d 1 -F 0.3')
 	os.system('echo "\t  ┖───────────────────────────────────────────────┙\n\n" | lolcat -a -d 1')
-	os.system('echo "[1] MAC ADDRESS CHANGER \n[2] ARP SPOOFER\n[3] DEMO\n\n[9] MAIN MENU\n[0] EXIT" |lolcat -a -d 1 -F 0.3')
+	os.system('echo "[1] MAC ADDRESS CHANGER \n[2] ARP SPOOFER\n[3] SYN FLOOD DoS ATTACK\n\n[9] MAIN MENU\n[0] EXIT" |lolcat -a -d 1 -F 0.3')
 
 	option = int(input(colored("\n|> Select Your Option: ",'green',attrs=['bold'])))
 	if option == 1:
@@ -18,8 +18,8 @@ def execute():
 	elif option == 2:
 		os.system('python3 arpspoofer.py && cd ..')
 
-#	elif option == 3:
-#		os.system('python3 ftplogin.py && cd ..')
+	elif option == 3:
+		os.system('python3 synflood.py && cd ..')
 
 	elif option == 9:
 		os.system("cd .. && python3 omnitrix.py")
