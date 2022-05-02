@@ -15,7 +15,7 @@ def execute():
 	os.system('echo "       |           CREATED BY \xa9 RAJNISH KUMAR         |" | lolcat -a -d 1 -F 0.5')
 	os.system('echo "       ┖──────────────────────────────────────────────┙" | lolcat -a -d 1 -F 0.2')
 
-	os.system('echo "\n[1] INFORMATION GATHERING\n[2] NETWORK SCANNER\n[3] SSH LOGIN\n[4] FTP LOGIN\n[5] HASH CRACKER\n[6] NETWORK ANALYZER\n[7] SPOOFERS\n\n[0] EXIT" |lolcat -a -d 1 -F 0.5')
+	os.system('echo "\n[1] INFORMATION GATHERING\n[2] NETWORK SCANNER\n[3] SSH LOGIN\n[4] FTP LOGIN\n[5] HASH CRACKER\n[6] NETWORK ANALYZER\n[7] SNIFFERS & SPOOFERS\n\n[0] EXIT" |lolcat -a -d 1 -F 0.5')
 
 
 	option = int(input(colored("\n|> Select Your Option: ",'yellow',attrs=['bold'])))
