@@ -4,7 +4,8 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 
-#apt-get update && apt upgrade
+apt-get update && apt upgrade
+
 apt-get install lolcat
 sleep 1
 echo "${bold}[+] Installing Python3 . . .${normal}" | lolcat -i -F 0.5
@@ -31,5 +32,8 @@ pip3 install python-nmap
 sleep 1
 echo "${bold}[+] Installing Pynput Module. . .${normal}" | lolcat -i -F 0.5
 pip3 install pynput
+sleep 1
+echo "${bold}[+] Installing Scapy_http Module. . .${normal}" | lolcat -i -F 0.5
+pip3 install scapy_http
 sleep 1
 echo "${bold}[+] Done${normal}" | lolcat -i -F 0.5
