@@ -28,7 +28,7 @@ def process_packets(packet):
 					break
 
 
-net_inter = raw_input("|> Enter Network Interface Name You Want To Sniff: ")
+net_inter = str(input("|> Enter Network Interface Name You Want To Sniff: "))
 words = ["password","user","username","login","pass","User","Password","User ID", "user id", "user name", "EMAIL", "email", "Phone", "phone", "identifier"]
 os.system("echo {}".format(net_inter))
 sniff(net_inter)

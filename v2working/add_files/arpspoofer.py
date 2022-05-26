@@ -32,8 +32,8 @@ def spoof_arp(target_ip,spoofed_ip):
 
 def main():
 	execute()
-	first_ip = str(input(colored("|> Enter First/Router's IP Address: ","green", attrs=['bold'])))
-	mitm_ip = str(input(colored("|> Enter IP Address OF Machine for Spoof ARP Packets: ","green", attrs=['bold'])))
+	first_ip = input(colored("|> Enter First/Router's IP Address: ","green", attrs=['bold']))
+	mitm_ip = input(colored("|> Enter IP Address OF Machine for Spoof ARP Packets: ","green", attrs=['bold']))
 	os.system('echo "\nSTARTING SPOOFING . . ."|lolcat -a -i -d 50 -F 0.5')
 	cprint("\n[!] PRECAUTIONS [!]\n=> Until The Is Running, Spoofing Attack Will Be In Process\n=> To Stop The Spoofing kindly press 'CTRL+C'\n=> Don't Press 'CTRL+Z' Otherwise You Will Not Able To Change Spoofed Address Automatically\n=> If You Do Revisit and Rerun The Spoofer & Close With 'CTRL+C' To Restore The Network Configuration","red", attrs=['bold'])
 	os.system('echo "\nSPOOFING STARTED . . ."|lolcat -a -i -d 5 -F 0.5')
