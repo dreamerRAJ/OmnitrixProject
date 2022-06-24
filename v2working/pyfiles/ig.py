@@ -26,8 +26,8 @@ def execute():
 		os.system('netdiscover | lolcat -F 0.3 && cd ..')
 		execute()
 
-	elif option == 5:
-		os.system('python3 open_source.py && cd ..')
+#	elif option == 5:
+#		os.system('python3 open_source.py && cd ..')
 
 	elif option == 9:
 		os.system("cd .. && python3 omnitrix.py")

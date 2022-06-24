@@ -36,4 +36,16 @@ sleep 1
 echo "${bold}[+] Installing Scapy_http Module. . .${normal}" | lolcat -i -F 0.5
 pip3 install scapy_http
 sleep 1
+echo "${bold}[+] Installing NetFilterQueue Library. . .${normal}" | lolcat -i -F 0.5
+pip3 install netfilterqueue
+sleep 1
 echo "${bold}[+] Done${normal}" | lolcat -i -F 0.5
+sleep 1
+echo "${bold}[+] Installing Termcolor For Python2. . .${normal}" | lolcat -i -F 0.5
+pip2 install termcolor
+sleep 1
+echo "${bold}[+] Done${normal}" | lolcat -i -F 0.5
+#echo "${bold}[+] Installing Wine. . .${normal}" | lolcat -i -F 0.5
+#apt-get install wine
+#apt-get install wine32
+#winecfg
